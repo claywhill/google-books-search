@@ -71,7 +71,7 @@ class SavedBooks extends Component {
         <Row>
           <Col size="md-12">
             <Jumbotron>
-              <h1>Saved Books On My List</h1>
+              <h1>My Saved Books</h1>
             </Jumbotron>
             {this.state.books.length ? (
               <List>
