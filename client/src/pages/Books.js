@@ -75,6 +75,12 @@ class Books extends Component {
                 name="title"
                 placeholder="Title (required)"
               />
+              <Input
+                value={this.state.author}
+                onChange={this.handleInputChange}
+                name="author"
+                placeholder="Author (required)"
+              />
               <FormBtn 
                 disabled={!(this.state.title)}
                 onClick={this.handleFormSubmit}
