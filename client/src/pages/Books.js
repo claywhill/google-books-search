@@ -32,7 +32,7 @@ class Books extends Component {
   };
 
   handleInputChange = event => {
-    const {  name, value} = event.target;
+    const { name, value } = event.target;
     this.setState({
       [name]: value
     });
@@ -75,7 +75,12 @@ class Books extends Component {
                 name="title"
                 placeholder="Title (required)"
               />
-              <FormBtn>Search</FormBtn>
+              <FormBtn 
+                disabled={!(this.state.title)}
+                onClick={this.handleFormSubmit}
+              >
+                Search
+              </FormBtn>
             </form>
           </Col>
         </Row>
@@ -86,10 +91,10 @@ class Books extends Component {
             <ListItem key={book.id}>
             <a href={book.volumeInfo.infoLink} alt="link" target="_blank" rel="noopener noreferrer">
             <strong>
-            {book.volumeInfo.title} by {book.volumeInfo.authors ? book.volumeInfo.authors[0]: "No Author Available"}
+            {book.volumeInfo.title} by {book.volumeInfo.author ? book.volumeInfo.author[0]: "No Author Available"}
             </strong>
             </a>
-            <SaveBtn onClick={() => this.saveBook(book.volumeInfo.title, book.volumeInfo.authors, book.volumeInfo.description, book.volumeInfo.imageLinks.thumbnail, book.volumeInfo.infoLink)} />
+            <SaveBtn onClick={() => this.saveBook(book.volumeInfo.title, book.volumeInfo.author, book.volumeInfo.synopsis, book.volumeInfo.imageLinks.thumbnail, book.volumeInfo.infoLink)} />
             </ListItem>
             ))}
           </List>
