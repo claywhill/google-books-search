@@ -23,7 +23,7 @@ class SavedBooks extends Component {
   loadBooks = () => {
     API.getBooks()
       .then(res =>
-        this.setState({ books: res.data, title: "", authors: "", description: "" })
+        this.setState({ books: res.data, title: "", author: "", synopsis: "" })
       )
       .catch(err => console.log(err));
   };
@@ -45,7 +45,7 @@ class SavedBooks extends Component {
     event.preventDefault();
     if (this.state.title) {
 
-      API.getGoogle(this.state.title)
+      API.getGoogleSearch(this.state.title)
         .then(res => 
           {this.setState({searchResults: res.data.items}, () => console.log(this.state.searchResults))
 
@@ -54,10 +54,10 @@ class SavedBooks extends Component {
     }
   };
 
-  saveBook = (title, authors, synopsis, image, link ) => {
+  saveBook = (title, author, synopsis, image, link ) => {
       API.saveBook({
         title,
-        authors,
+        author,
         synopsis,
         image,
         link
