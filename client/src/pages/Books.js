@@ -100,7 +100,7 @@ class Books extends Component {
             {book.volumeInfo.title} by {book.volumeInfo.authors ? book.volumeInfo.authors[0]: "No Author Available"}
             </strong>
             </a>
-            <SaveBtn onClick={() => this.saveBook(book.volumeInfo.title, book.volumeInfo.author, book.volumeInfo.synopsis, book.volumeInfo.imageLinks.thumbnail, book.volumeInfo.infoLink)} />
+            <SaveBtn onClick={() => this.saveBook(book.volumeInfo.title, book.volumeInfo.authors[0], book.volumeInfo.synopsis, book.volumeInfo.imageLinks.thumbnail, book.volumeInfo.infoLink)} />
             </ListItem>
             ))}
           </List>
