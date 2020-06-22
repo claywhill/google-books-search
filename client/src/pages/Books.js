@@ -91,7 +91,7 @@ class Books extends Component {
             <ListItem key={book.id}>
             <a href={book.volumeInfo.infoLink} alt="link" target="_blank" rel="noopener noreferrer">
             <strong>
-            {book.volumeInfo.title} by {book.volumeInfo.author ? book.volumeInfo.author[0]: "No Author Available"}
+            {book.volumeInfo.title} by {book.volumeInfo.authors ? book.volumeInfo.authors[0]: "No Author Available"}
             </strong>
             </a>
             <SaveBtn onClick={() => this.saveBook(book.volumeInfo.title, book.volumeInfo.author, book.volumeInfo.synopsis, book.volumeInfo.imageLinks.thumbnail, book.volumeInfo.infoLink)} />
